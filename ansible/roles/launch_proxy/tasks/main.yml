@@ -1,15 +1,12 @@
-
-
 - name: Run NGINX reverse proxy container
-  recreate: true
-  pull: yes
-  docker_container:
+  community.docker.docker_container:
     name: proxy
     image: nazimbz/tp-devops-simple-api-httpd:latest
-    #image: nginx:latest
+    restart_policy: always
+    recreate: true
+    pull: true
     ports:
       - "80:80"
     networks:
       - name: my-network
-
-
+    state: started

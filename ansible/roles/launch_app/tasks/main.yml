@@ -1,12 +1,13 @@
 - name: Run application container
-  docker_container:
+  community.docker.docker_container:
     name: simple-api
     image: nazimbz/tp-devops-simple-api-backend:latest
     restart_policy: always
     recreate: true
-    pull: yes
+    pull: true
     env:
       DATABASE_HOST: mydb
       DATABASE_PASSWORD: pwd
     networks:
       - name: my-network
+    state: started
