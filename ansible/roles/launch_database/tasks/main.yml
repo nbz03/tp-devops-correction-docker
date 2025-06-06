@@ -1,7 +1,10 @@
 - name: Run PostgreSQL container
+  recreate: true
+  pull: yes
   docker_container:
     name: mydb
     image: nazimbz/tp-devops-simple-api-database
+
     env:
       POSTGRES_USER: usr
       POSTGRES_PASSWORD: pwd

@@ -3,6 +3,8 @@
     name: simple-api
     image: nazimbz/tp-devops-simple-api-backend:latest
     restart_policy: always
+    recreate: true
+    pull: yes
     env:
       DATABASE_HOST: mydb
       DATABASE_PASSWORD: pwd
