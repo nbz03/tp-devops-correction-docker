@@ -21,6 +21,10 @@ jobs:
       - name: Install Ansible
         run: sudo apt-get update && sudo apt-get install -y ansible
 
+      - name: Add SSH host key to known_hosts
+        run: |
+          ssh-keyscan -H mohamed-nazim.boudjema.takima.cloud >> ~/.ssh/known_hosts
+          
       - name: Deploy to server using Ansible
         run: |
           cd ansible
