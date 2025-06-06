@@ -24,4 +24,4 @@ jobs:
       - name: Deploy to server using Ansible
         run: |
           cd ansible
-          ansible-playbook -i inventories/setup.yml ansible/deploy.yml
+          ansible-playbook -i inventories/setup.yml deploy.yml
