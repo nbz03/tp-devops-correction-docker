@@ -1,13 +1,14 @@
 - name: Run PostgreSQL container
-  recreate: true
-  pull: yes
-  docker_container:
+  community.docker.docker_container:
     name: mydb
-    image: nazimbz/tp-devops-simple-api-database
-
+    image: nazimbz/tp-devops-simple-api-database:latest
+    restart_policy: always
+    recreate: true
+    pull: true
     env:
       POSTGRES_USER: usr
       POSTGRES_PASSWORD: pwd
       POSTGRES_DB: db
     networks:
       - name: my-network
+    state: started
